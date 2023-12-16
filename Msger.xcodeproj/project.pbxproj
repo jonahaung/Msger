@@ -126,6 +126,7 @@
 		470291412B2D1086007B365D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				47B142CA2B2CCFE80083FC46 /* Account.swift */,
 				470291422B2D1090007B365D /* Contact.swift */,
 			);
 			path = Models;
@@ -134,6 +135,7 @@
 		470291442B2D10AF007B365D /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				47B142BB2B2CBFBE0083FC46 /* MockContactStore.swift */,
 				470291472B2D10D1007B365D /* MockDataPresentable.swift */,
 				470291452B2D10B6007B365D /* Contact+Mock.swift */,
 			);
@@ -245,8 +247,6 @@
 			children = (
 				470291442B2D10AF007B365D /* Mock */,
 				470291412B2D1086007B365D /* Models */,
-				47B142BB2B2CBFBE0083FC46 /* MockContactStore.swift */,
-				47B142CA2B2CCFE80083FC46 /* Account.swift */,
 				4702914B2B2D12EC007B365D /* Views */,
 			);
 			path = Sources;

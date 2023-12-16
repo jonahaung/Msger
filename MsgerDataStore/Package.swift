@@ -19,9 +19,6 @@ let package = Package(
             targets: ["MsgerDataStore"]
         ),
     ],
-    dependencies: [
-        .package(name: "XUI", path: "./XUI"),
-    ],
     targets: [
         .target(
             name: "MsgerDataStore",

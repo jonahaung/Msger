@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import MsgerDataStore
+import XUI
 
 @Observable
 final class MockContactStore: ContactStoreProtocol {
@@ -19,7 +20,8 @@ final class MockContactStore: ContactStoreProtocol {
 
     init(_ account: AnyAccount, _ modelContext: ModelContext) {
         self.account = account
-        self.modelContext = modelContext
+        self.modelContext = .init(modelContext.container)
+        Log("init")
     }
 
     func fetchData() {
@@ -32,9 +34,7 @@ final class MockContactStore: ContactStoreProtocol {
             .map { (key: Character, value: [AnyContact]) -> (letter: String, contacts: [AnyContact]) in
                 (letter: String(key), contacts: value)
             }
-            .sorted { (left, right) -> Bool in
-                left.letter < right.letter
-            }
+            .sorted { $0.letter < $1.letter }
         } catch {
             print("Fetch failed")
         }
