@@ -7,12 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import MsgerDataStore
 
 @main
 struct MsgerApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Contact.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +26,7 @@ struct MsgerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContactListNavigationStack(MockContactStore(Account.current, sharedModelContainer.mainContext))
         }
-        .modelContainer(sharedModelContainer)
     }
 }
