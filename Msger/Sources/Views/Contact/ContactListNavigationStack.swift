@@ -16,16 +16,27 @@ struct ContactListNavigationStack: View {
 
     init(_ store: @autoclosure @escaping () -> ContactStoreProtocol) {
         self.store = store()
-        self.store.fetchData()
     }
-    
+
     var body: some View {
         NavigationStack {
             ContactList(store)
                 .navigationTitle("Contacts")
-                .navigationDestination(for: Contact.self) { contact in
-                    Text(contact.id)
-                        .navigationTitle(contact.name)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            store.addSample()
+                        } label: {
+                            Image(systemSymbol: .plus)
+                        }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        EditButton()
+                    }
+                }
+                .navigationDestination(for: Contact.self) {
+                    Text($0.id)
+                        .navigationTitle($0.name)
                 }
         }
     }

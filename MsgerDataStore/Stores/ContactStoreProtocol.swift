@@ -12,11 +12,11 @@ public protocol ContactStoreProtocol {
 
     var account: AnyAccount { get }
     var contacts: [AnyContact] { get set }
-    var sections: [(letter: String, contacts: [AnyContact])] { get set }
+    var sections: [(letter: String, contacts: [AnyContact])] { get }
 
     init(_ account: AnyAccount, _ modelContext: ModelContext)
 
     func fetchData()
     func addSample()
-    func deleteItems(_ indexPaths: [IndexPath])
+    func deleteItems(_ items: [AnyContact])
 }

@@ -17,14 +17,13 @@ struct ContactSearchResults: View {
         self.store = store()
         self._searchText = searchText
     }
-
     var body: some View {
-        if searchText.isEmpty {
+        if searchText.isWhitespace {
             if store.sections.isEmpty {
-                ContentUnavailableView("Refresh to load earthquakes", systemImage: "globe")
+                ContentUnavailableView("Refresh to load contacts", systemImage: "bird.fill")
             } else {
                 ForEach(store.sections, id: \.letter) { section in
-                     ContactSection(section: section)
+                    ContactSection(store, section: section)
                 }
             }
         } else {

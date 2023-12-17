@@ -10,26 +10,40 @@ import MsgerDataStore
 
 struct ContactList: View {
 
-    private let store: ContactStoreProtocol
+    private var store: ContactStoreProtocol
+    @Environment(\.editMode) private var editMode
     @State private var searchText = ""
+    @State private var multiSelection = Set<Contact>()
 
     init(_ store: @autoclosure @escaping () -> ContactStoreProtocol) {
         self.store = store()
+        self.store.fetchData()
     }
 
-
     var body: some View {
-        List {
-            ContactSearchResults(store, searchText: $searchText)
+        let canEdit = editMode?.wrappedValue != .inactive
+        let id = store.contacts.count + searchText.count
+        VStack {
+            List(selection: canEdit ? $multiSelection : nil) {
+                ContactSearchResults(store, searchText: $searchText)
+            }
+            if canEdit {
+                HStack {
+                    Text(multiSelection.count.description)
+                }
+            }
+        }
+        .animation(.bouncy, value: id)
+        .refreshable {
+            store.fetchData()
         }
         .searchable(text: $searchText)
+        .scrollDismissesKeyboard(.interactively)
         .searchSuggestions {
             if searchText.isEmpty {
                 ContactSearchSuggestions(contacts: store.contacts)
             }
         }
-        .refreshable {
-            store.fetchData()
-        }
+        .equatable(by: id)
     }
 }

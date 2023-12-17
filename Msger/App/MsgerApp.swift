@@ -23,10 +23,32 @@ struct MsgerApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    @State private var router = Router()
 
     var body: some Scene {
         WindowGroup {
-            ContactListNavigationStack(MockContactStore(Account.current, sharedModelContainer.mainContext))
+            switch router.route {
+            case .splashScreen:
+                Text("Splash Screen")
+                    ._onAppear(after: 1) {
+                        self.router.route = .welcom
+                    }
+            case .welcom:
+                Text("Welcome")
+                    ._onAppear(after: 1) {
+                        self.router.route = .main(.login)
+                    }
+            case .main(let mainRoute):
+                switch mainRoute {
+                case .login:
+                    Text("Login")
+                        ._onAppear(after: 1) {
+                            self.router.route = .main(.tab(.contact([])))
+                        }
+                case .tab(let tabRoute):
+                    ContactListNavigationStack(MockContactStore(Account.current, sharedModelContainer.mainContext))
+                }
+            }
         }
     }
 }

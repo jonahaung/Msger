@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-public protocol ContactProtocol: PersistentModel, Identifiable {
+public protocol ContactProtocol: PersistentModel, Identifiable, Equatable {
     var id: String { get set }
     var phone: String { get set }
     var name: String { get set }
