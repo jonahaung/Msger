@@ -11,11 +11,11 @@ import XUI
 
 struct ContactSection: View {
 
-    private let store: ContactStoreProtocol
     private let section: (letter: String, contacts: [MsgerDataStore.AnyContact])
+    @Environment(\.modelContext) private var modelContext
+    @Environment(MockContactStore.self) private var store
 
-    init(_ store: @autoclosure @escaping () -> ContactStoreProtocol, section: (letter: String, contacts: [MsgerDataStore.AnyContact])) {
-        self.store = store()
+    init(_ section: (letter: String, contacts: [MsgerDataStore.AnyContact])) {
         self.section = section
     }
 
@@ -31,6 +31,6 @@ struct ContactSection: View {
     }
     private func delete(at indexSet: IndexSet) {
         let items = indexSet.compactMap{ section.contacts[safe: $0] }
-        store.deleteItems(items)
+        store.delete(items, modelContext)
     }
 }

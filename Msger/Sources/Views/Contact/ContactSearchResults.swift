@@ -11,10 +11,9 @@ import MsgerDataStore
 struct ContactSearchResults: View {
 
     @Binding var searchText: String
-    private let store: ContactStoreProtocol
+    @Environment(MockContactStore.self) private var store
 
-    init(_ store: @autoclosure @escaping () -> ContactStoreProtocol, searchText: Binding<String>) {
-        self.store = store()
+    init(_ searchText: Binding<String>) {
         self._searchText = searchText
     }
     var body: some View {
@@ -23,7 +22,7 @@ struct ContactSearchResults: View {
                 ContentUnavailableView("Refresh to load contacts", systemImage: "bird.fill")
             } else {
                 ForEach(store.sections, id: \.letter) { section in
-                    ContactSection(store, section: section)
+                    ContactSection(section)
                 }
             }
         } else {

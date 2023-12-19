@@ -10,13 +10,11 @@ import SwiftData
 
 public protocol ContactStoreProtocol {
 
-    var account: AnyAccount { get }
     var contacts: [AnyContact] { get set }
     var sections: [(letter: String, contacts: [AnyContact])] { get }
-
-    init(_ account: AnyAccount, _ modelContext: ModelContext)
-
-    func fetchData()
-    func addSample()
-    func deleteItems(_ items: [AnyContact])
+    
+    func fetch(_ modelContext: ModelContext)
+    func add(_ item: AnyContact, _ modelContext: ModelContext)
+    func delete(_ items: [AnyContact], _ modelContext: ModelContext)
+    init()
 }

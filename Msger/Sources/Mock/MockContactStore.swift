@@ -13,8 +13,8 @@ import XUI
 @Observable
 final class MockContactStore: ContactStoreProtocol {
 
-    private let modelContext: ModelContext
-    internal let account: MsgerDataStore.AnyAccount
+    init() {}
+
     var contacts = [AnyContact]()
     var sections: [(letter: String, contacts: [AnyContact])] {
         Dictionary(grouping: contacts.lazy) { (contact) -> Character in
@@ -26,13 +26,8 @@ final class MockContactStore: ContactStoreProtocol {
         .sorted { $0.letter < $1.letter }
     }
 
-    init(_ account: AnyAccount, _ modelContext: ModelContext) {
-        self.account = account
-        self.modelContext = .init(modelContext.container)
-        Log("init")
-    }
-
-    func fetchData() {
+    func fetch(_ modelContext: ModelContext) {
+        print("fetching")
         do {
             let descriptor = FetchDescriptor<Contact>(sortBy: [SortDescriptor(\Contact.name)])
             contacts = try modelContext.fetch(descriptor)
@@ -40,16 +35,14 @@ final class MockContactStore: ContactStoreProtocol {
             print("Fetch failed")
         }
     }
-
-    func addSample() {
-        let new = Contact.mock()
-        modelContext.insert(new)
-        fetchData()
+    func add(_ item: AnyContact, _ modelContext: ModelContext) {
+        modelContext.insert(item)
+        fetch(modelContext)
     }
-    func deleteItems(_ items: [AnyContact]) {
+    func delete(_ items: [AnyContact], _ modelContext: ModelContext) {
         items.forEach { each in
             modelContext.delete(each)
         }
-        fetchData()
+        fetch(modelContext)
     }
 }

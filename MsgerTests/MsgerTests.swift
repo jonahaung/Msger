@@ -6,7 +6,8 @@
 //
 
 import XCTest
-
+// test_UnitOfWork_StateUnderTest_ExpectedBehavior
+// test_[struct or class]_[variable or function]_[expeced result]
 final class MsgerTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -16,7 +17,6 @@ final class MsgerTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

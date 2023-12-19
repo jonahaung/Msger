@@ -6,7 +6,6 @@
 //
 
 import XCTest
-
 final class MsgerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {

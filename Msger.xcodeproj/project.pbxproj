@@ -12,8 +12,6 @@
 		470291482B2D10D1007B365D /* MockDataPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470291472B2D10D1007B365D /* MockDataPresentable.swift */; };
 		4702914A2B2D11AA007B365D /* XUI in Frameworks */ = {isa = PBXBuildFile; productRef = 470291492B2D11AA007B365D /* XUI */; };
 		472F8BBF2B2C968500F69778 /* MsgerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F8BBE2B2C968500F69778 /* MsgerApp.swift */; };
-		472F8BC12B2C968500F69778 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F8BC02B2C968500F69778 /* ContentView.swift */; };
-		472F8BC32B2C968500F69778 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F8BC22B2C968500F69778 /* Item.swift */; };
 		472F8BC52B2C968600F69778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472F8BC42B2C968600F69778 /* Assets.xcassets */; };
 		472F8BC92B2C968600F69778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472F8BC82B2C968600F69778 /* Preview Assets.xcassets */; };
 		472F8BD42B2C968600F69778 /* MsgerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472F8BD32B2C968600F69778 /* MsgerTests.swift */; };
@@ -24,10 +22,9 @@
 		47B142BC2B2CBFBE0083FC46 /* MockContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B142BB2B2CBFBE0083FC46 /* MockContactStore.swift */; };
 		47B142C52B2CC5B20083FC46 /* PrefersTabNavigationEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B142C42B2CC5B20083FC46 /* PrefersTabNavigationEnvironmentKey.swift */; };
 		47B142C72B2CC6A40083FC46 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B142C62B2CC6A40083FC46 /* MainTabView.swift */; };
-		47B142C92B2CC6CC0083FC46 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B142C82B2CC6CC0083FC46 /* MainTab.swift */; };
 		47B142CB2B2CCFE80083FC46 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B142CA2B2CCFE80083FC46 /* Account.swift */; };
 		47BE05702B2D47F400598973 /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE056F2B2D47F400598973 /* ContactList.swift */; };
-		47BE05722B2D486D00598973 /* ContactListNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05712B2D486D00598973 /* ContactListNavigationStack.swift */; };
+		47BE05722B2D486D00598973 /* ContactMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05712B2D486D00598973 /* ContactMainView.swift */; };
 		47BE05742B2D48F100598973 /* ContactSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05732B2D48F100598973 /* ContactSearchResults.swift */; };
 		47BE05762B2D497B00598973 /* ContactSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05752B2D497B00598973 /* ContactSection.swift */; };
 		47BE05782B2D4E1100598973 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05772B2D4E1100598973 /* ContactRow.swift */; };
@@ -39,6 +36,9 @@
 		47BE05852B2D782200598973 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05842B2D782200598973 /* Sheet.swift */; };
 		47BE05872B2D782D00598973 /* FullScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE05862B2D782D00598973 /* FullScreenCover.swift */; };
 		47BE058B2B2D7A6D00598973 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BE058A2B2D7A6D00598973 /* Router.swift */; };
+		47ECD7052B3045C900CDFCA3 /* MainNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ECD7042B3045C900CDFCA3 /* MainNavView.swift */; };
+		47ECD7092B30463B00CDFCA3 /* NavRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47ECD7082B30463B00CDFCA3 /* NavRouter.swift */; };
+		47F7539C2B318C8700F04C7C /* Router_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F7539B2B318C8700F04C7C /* Router_Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,6 @@
 		470291472B2D10D1007B365D /* MockDataPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataPresentable.swift; sourceTree = "<group>"; };
 		472F8BBB2B2C968500F69778 /* Msger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Msger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472F8BBE2B2C968500F69778 /* MsgerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgerApp.swift; sourceTree = "<group>"; };
-		472F8BC02B2C968500F69778 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		472F8BC22B2C968500F69778 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		472F8BC42B2C968600F69778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472F8BC62B2C968600F69778 /* Msger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Msger.entitlements; sourceTree = "<group>"; };
 		472F8BC82B2C968600F69778 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -93,10 +91,9 @@
 		47B142BB2B2CBFBE0083FC46 /* MockContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContactStore.swift; sourceTree = "<group>"; };
 		47B142C42B2CC5B20083FC46 /* PrefersTabNavigationEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefersTabNavigationEnvironmentKey.swift; sourceTree = "<group>"; };
 		47B142C62B2CC6A40083FC46 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		47B142C82B2CC6CC0083FC46 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		47B142CA2B2CCFE80083FC46 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		47BE056F2B2D47F400598973 /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
-		47BE05712B2D486D00598973 /* ContactListNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListNavigationStack.swift; sourceTree = "<group>"; };
+		47BE05712B2D486D00598973 /* ContactMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMainView.swift; sourceTree = "<group>"; };
 		47BE05732B2D48F100598973 /* ContactSearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSearchResults.swift; sourceTree = "<group>"; };
 		47BE05752B2D497B00598973 /* ContactSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSection.swift; sourceTree = "<group>"; };
 		47BE05772B2D4E1100598973 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
@@ -108,6 +105,9 @@
 		47BE05842B2D782200598973 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		47BE05862B2D782D00598973 /* FullScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCover.swift; sourceTree = "<group>"; };
 		47BE058A2B2D7A6D00598973 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		47ECD7042B3045C900CDFCA3 /* MainNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavView.swift; sourceTree = "<group>"; };
+		47ECD7082B30463B00CDFCA3 /* NavRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRouter.swift; sourceTree = "<group>"; };
+		47F7539B2B318C8700F04C7C /* Router_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +159,7 @@
 		4702914B2B2D12EC007B365D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47ECD7032B3045BB00CDFCA3 /* MainNav */,
 				4702914D2B2D1309007B365D /* MainTab */,
 				4702914C2B2D12F4007B365D /* Contact */,
 			);
@@ -168,12 +169,12 @@
 		4702914C2B2D12F4007B365D /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				47BE05772B2D4E1100598973 /* ContactRow.swift */,
+				47BE05712B2D486D00598973 /* ContactMainView.swift */,
+				47BE056F2B2D47F400598973 /* ContactList.swift */,
 				47BE05752B2D497B00598973 /* ContactSection.swift */,
+				47BE05772B2D4E1100598973 /* ContactRow.swift */,
 				47BE05732B2D48F100598973 /* ContactSearchResults.swift */,
 				47BE05792B2D594000598973 /* ContactSearchSuggestions.swift */,
-				47BE056F2B2D47F400598973 /* ContactList.swift */,
-				47BE05712B2D486D00598973 /* ContactListNavigationStack.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 		4702914D2B2D1309007B365D /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				47B142C82B2CC6CC0083FC46 /* MainTab.swift */,
 				47B142C62B2CC6A40083FC46 /* MainTabView.swift */,
 			);
 			path = MainTab;
@@ -235,6 +235,7 @@
 		472F8BD22B2C968600F69778 /* MsgerTests */ = {
 			isa = PBXGroup;
 			children = (
+				47F7539B2B318C8700F04C7C /* Router_Tests.swift */,
 				472F8BD32B2C968600F69778 /* MsgerTests.swift */,
 			);
 			path = MsgerTests;
@@ -271,8 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				472F8BBE2B2C968500F69778 /* MsgerApp.swift */,
-				472F8BC02B2C968500F69778 /* ContentView.swift */,
-				472F8BC22B2C968500F69778 /* Item.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -318,8 +317,17 @@
 			isa = PBXGroup;
 			children = (
 				47BE058A2B2D7A6D00598973 /* Router.swift */,
+				47ECD7082B30463B00CDFCA3 /* NavRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		47ECD7032B3045BB00CDFCA3 /* MainNav */ = {
+			isa = PBXGroup;
+			children = (
+				47ECD7042B3045C900CDFCA3 /* MainNavView.swift */,
+			);
+			path = MainNav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,23 +473,22 @@
 				47BE05872B2D782D00598973 /* FullScreenCover.swift in Sources */,
 				47BE05762B2D497B00598973 /* ContactSection.swift in Sources */,
 				47BE05832B2D757F00598973 /* NavRoute.swift in Sources */,
-				47BE05722B2D486D00598973 /* ContactListNavigationStack.swift in Sources */,
+				47BE05722B2D486D00598973 /* ContactMainView.swift in Sources */,
 				47B142BC2B2CBFBE0083FC46 /* MockContactStore.swift in Sources */,
-				472F8BC12B2C968500F69778 /* ContentView.swift in Sources */,
 				47BE057A2B2D594000598973 /* ContactSearchSuggestions.swift in Sources */,
 				47B142C72B2CC6A40083FC46 /* MainTabView.swift in Sources */,
-				47B142C92B2CC6CC0083FC46 /* MainTab.swift in Sources */,
 				47BE05702B2D47F400598973 /* ContactList.swift in Sources */,
 				47B142CB2B2CCFE80083FC46 /* Account.swift in Sources */,
 				470291432B2D1090007B365D /* Contact.swift in Sources */,
 				47BE05742B2D48F100598973 /* ContactSearchResults.swift in Sources */,
-				472F8BC32B2C968500F69778 /* Item.swift in Sources */,
 				470291482B2D10D1007B365D /* MockDataPresentable.swift in Sources */,
 				47BE057F2B2D749400598973 /* MainRoute.swift in Sources */,
 				47BE058B2B2D7A6D00598973 /* Router.swift in Sources */,
 				472F8BBF2B2C968500F69778 /* MsgerApp.swift in Sources */,
+				47ECD7092B30463B00CDFCA3 /* NavRouter.swift in Sources */,
 				47BE05812B2D74F600598973 /* TabRoute.swift in Sources */,
 				47BE05852B2D782200598973 /* Sheet.swift in Sources */,
+				47ECD7052B3045C900CDFCA3 /* MainNavView.swift in Sources */,
 				47BE057D2B2D746D00598973 /* Route.swift in Sources */,
 				470291462B2D10B6007B365D /* Contact+Mock.swift in Sources */,
 				47B142C52B2CC5B20083FC46 /* PrefersTabNavigationEnvironmentKey.swift in Sources */,
@@ -493,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F7539C2B318C8700F04C7C /* Router_Tests.swift in Sources */,
 				472F8BD42B2C968600F69778 /* MsgerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

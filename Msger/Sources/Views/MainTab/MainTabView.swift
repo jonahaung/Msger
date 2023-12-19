@@ -6,19 +6,48 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainTabView: View {
-    
-    @Binding var selection: MainTab
-    @State private var navPath = NavigationPath()
+
+    @Environment(Router.self) private var router
 
     var body: some View {
-        TabView(selection: $selection) {
-            ForEach(MainTab.allCases) { tab in
-//                tab.destination
-//                    .tag(tab)
-//                    .tabItem { tab.label }
+        TabView(selection: .init(get: {
+            router.currentTab
+        }, set: { router.currentTab = $0 })) {
+            ForEach(TabRoute.allCases) { tab in
+                MainNavView {
+                    switch tab {
+                    case .inbox:
+                        Text("Inbox")
+                    case .contact:
+                        ContactMainView()
+                    case .account:
+                        Text("Account")
+                    }
+                }
+                .equatable(by: tab.id)
+                .tabItem {
+                    label(for: tab)
+                }
+                .tag(tab.id)
             }
+        }
+        .equatable(by: router.currentTab.id)
+    }
+
+    @ViewBuilder
+    private
+    func label(for tab: TabRoute) -> some View {
+        switch tab {
+        case .inbox:
+            Label("Birds", systemImage: "bird")
+        case .contact:
+            Label("Plants", systemImage: "leaf")
+        case .account:
+            Label("Account", systemImage: "person.crop.circle")
         }
     }
 }
+

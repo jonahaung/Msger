@@ -8,11 +8,10 @@
 import Foundation
 
 enum TabRoute: Hashable {
-    case inbox([NavRoute])
-    case contact([NavRoute])
-    case account([NavRoute])
+    case inbox
+    case contact
+    case account
 }
 extension TabRoute: Identifiable, CaseIterable {
     var id: Self { self }
-    static var allCases: [TabRoute] = [.inbox([]), .contact([]), .account([])]
 }
